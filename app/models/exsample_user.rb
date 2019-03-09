@@ -14,4 +14,13 @@ class Exsample_User
     def full_name
         "#{@first_name} #{@last_name}"
     end
+
+    def alphabetical_name
+        "#{@first_name},#{@last_name}"
+    end
+
+    def is_split_alphabetical_name?
+        split_from_alphabetical_name = alphabetical_name.split
+        split_from_alphabetical_name == full_name
+    end
 end
