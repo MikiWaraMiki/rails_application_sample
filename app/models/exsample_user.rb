@@ -20,8 +20,8 @@ class Exsample_User
     end
 
     def is_split_alphabetical_name?
-        split_from_alphabetical_name = alphabetical_name.split(",")
+        split_from_alphabetical_name = alphabetical_name.split(", ")
         puts split_from_alphabetical_name
-        split_from_alphabetical_name == full_name
+        split_from_alphabetical_name == full_name.split
     end
 end
