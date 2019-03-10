@@ -160,6 +160,7 @@ input{
 
 .field_with_errors{
     @extend .has-error;
+    width: 100%;
     .form-control{
         color: $state-danger-text;
     }
