@@ -29,3 +29,4 @@
 # Ignore env Files
 .env
 sample.pu
+app/views/layouts/application.html.erb.bk
