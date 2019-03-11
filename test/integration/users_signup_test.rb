@@ -14,5 +14,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
       }
     end
     assert_template 'users/new'
+    assert_select "div#<CSS id for error information>"
+    assert_select "div.<CSS class for field with error>"
   end
 end
