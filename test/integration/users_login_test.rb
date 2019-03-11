@@ -16,6 +16,6 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_template "sessions/new"
     assert_not flash.empty?
     get root_path
-    asser flash.empty?
+    assert flash.empty?
   end
 end
