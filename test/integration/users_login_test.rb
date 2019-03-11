@@ -7,7 +7,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     get login_path
     #テンプレートが正しいことを検証
     assert_template "sessions/new"
-    post login_path, params{
+    post login_path, params:{
       session:{
         email:"sampel.com",
         password:""
