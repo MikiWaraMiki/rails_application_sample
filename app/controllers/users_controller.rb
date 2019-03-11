@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       
     else
-      render "new"
+      render signup_path
     end
   end
   #Private Method
