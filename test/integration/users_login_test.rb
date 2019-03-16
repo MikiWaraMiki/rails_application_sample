@@ -1,12 +1,9 @@
 require 'test_helper'
-module SessionsHelper
-
 
 class UsersLoginTest < ActionDispatch::IntegrationTest
 
   def setup
     @user = users(:michael)
-    remember(@user)
   end
 
   test "login with invalid infromation" do
