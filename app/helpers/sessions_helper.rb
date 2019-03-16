@@ -43,7 +43,6 @@ module SessionsHelper
     end
 
     def store_location
-        puts("Redirect #{{request.original_url}}")
         session[:forwarding_url] = request.original_url if request.get?
     end
 end

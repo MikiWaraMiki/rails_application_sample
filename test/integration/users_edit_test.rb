@@ -68,7 +68,6 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     get edit_user_path(@user)
     assert_redirected_to login_path
     log_in_as(@user)
-    puts("Redirect Path #{session[:redirect_path]}")
     assert_redirected_to edit_user_path(@user)
     name = "update"
     email = "update@exsample.com"
