@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create!(name: "Exsample",
     email: "exsample@railstutorial.org",
-    pssword: "password",
+    password: "password",
     password_cofirmation: "password"
     )
 99.times do |n|
