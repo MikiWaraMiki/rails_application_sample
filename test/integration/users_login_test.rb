@@ -1,4 +1,6 @@
 require 'test_helper'
+module SessionsHelper
+
 
 class UsersLoginTest < ActionDispatch::IntegrationTest
 
