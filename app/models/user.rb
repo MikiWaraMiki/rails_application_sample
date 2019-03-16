@@ -9,8 +9,7 @@ class User < ApplicationRecord
 
     def User.digest(string)
         #ハッシュ値を返す
-        cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-        BCrypt::Engine.cost
+        cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
         #ハッシュ値でパスワードを登録する
         BCrypt::Password.create(string, cost: cost)
     end

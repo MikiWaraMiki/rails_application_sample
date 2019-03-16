@@ -24,13 +24,15 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   end
 
   test "login with valid information" do
+    puts(@user)
     get login_path
     post login_path, params:{
       session:{
         email: @user.email,
-        password: 'password',
+        password:'password',
       }
-    }   
+    }
+    assert_not flash.empty?
     assert_redirected_to @user
     follow_redirect!
 
