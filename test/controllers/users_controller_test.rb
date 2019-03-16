@@ -22,5 +22,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       }
     }
     assert_not @other_user.reload.admin?
+  end
 
 end
