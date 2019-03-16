@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
+  def setup
+    @other_user= users(:michael)
+  end
+
   test "should get new" do
     get signup_path
     assert_response :success
@@ -16,7 +20,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_not @other_user.admin?
     patch user_path(@other_user), params:{
       user:{
-        email: @other_user.email,
         password: "password",
         password_confirmation: "password",
         admin: true,
