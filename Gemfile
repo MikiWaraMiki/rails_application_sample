@@ -72,3 +72,6 @@ gem "bootstrap-sass", ">= 3.4.1"
 #Bcrypt(Blofish Crypt). This installing purpose is login authentication
 gem "bcrypt", ">=3.1.12"
 
+# install Jquery
+gem "jquery-rails"
+gem "jquery-ui-rails"
