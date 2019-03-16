@@ -2,6 +2,7 @@
 <h1> All Users</h1>
 
 <ul class="users">
+<%= will_paginate %>
 <% @users.each do |user| %>
     <li>
         <%= gravator_for user, size:50 %>
@@ -9,3 +10,4 @@
     </li>
 <% end %>
 </ul>
+<%= will_paginate %>
