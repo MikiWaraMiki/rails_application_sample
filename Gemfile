@@ -75,3 +75,6 @@ gem "bcrypt", ">=3.1.12"
 # install Jquery
 gem "jquery-rails"
 gem "jquery-ui-rails"
+
+#Installing facker
+gem "faker", ">=1.7.3"
