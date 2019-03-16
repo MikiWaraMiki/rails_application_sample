@@ -8,6 +8,10 @@
             
             <%= f.label :password %>
             <%= f.password_field :password, class:"form-control" %>
+            <%= f.label :remember_me, class:'checkbox inline' do%>
+                <%= f.check_box :remember_me%>
+                <span>Rmember me on this computer</spna>
+            <% end %>
             
             <%= f.submit "Login", disable_with: 'Logining...', class:"btn btn-primary" %>
         <% end %>
