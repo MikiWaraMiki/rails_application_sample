@@ -28,4 +28,18 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_not @other_user.reload.admin?
   end
 
+  test "should redirect when destory without login" do
+    assert_no_difference "User.count" do
+      delete user_path(@user)
+    end
+    assert_redirected_to login_url
+  end
+
+  test "should redirect when destory unlenn admin user" do
+    log_in_as(@other_user)
+    assert_no_difference "User.count" do
+      delete user_path(@user)
+    end
+    assert_redirected_to login_path
+  end
 end
