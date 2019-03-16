@@ -68,7 +68,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #Bootstrap and Jqury install
 source 'https://rubygems.org'
 gem "bootstrap-sass", ">= 3.4.1"
-gem "bootstrap-will_pagenate", ">=1.0.0"
+gem "bootstrap-will_paginate", ">=1.0.0"
 #Bcrypt(Blofish Crypt). This installing purpose is login authentication
 gem "bcrypt", ">=3.1.12"
 
