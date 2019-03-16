@@ -32,7 +32,6 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
         password:'password',
       }
     }
-    assert_not flash.empty?
     assert_redirected_to @user
     follow_redirect!
 
