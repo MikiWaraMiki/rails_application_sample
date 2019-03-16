@@ -17,6 +17,7 @@ class User < ApplicationRecord
 
     def User.new_token
         SecurePassword.urlsafe_base64
+    end
 
     def remember
         self.remember = User.new_token
