@@ -14,16 +14,6 @@ class SessionsController < ApplicationController
     end
   end
 
-  def log_in(user)
-    session[:user] = user.id
-  end
-
-  def current_user
-    if session[:user]
-      @current_user ||= User.find_by(id: session[:id])
-    end
-  end
-
   def destroy
   end
 
