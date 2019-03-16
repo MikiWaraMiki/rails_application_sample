@@ -6,4 +6,12 @@ class User < ApplicationRecord
               uniqueness: {case_sensitive: false}
     has_secure_password
     validates :password, presence: true, length: {minimum:6}
+
+    def User.digest(strig)
+        #ハッシュ値を返す
+        cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+        BCrypt::Engine.cost
+        #ハッシュ値でパスワードを登録する
+        BCrypt::Password.create(string, cost: cost)
+    end
 end
