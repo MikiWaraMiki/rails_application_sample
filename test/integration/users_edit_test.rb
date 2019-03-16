@@ -28,7 +28,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     email = "Update@exsample.com" 
 
     patch user_path(@user), params:{
-      user{
+      user:{
         name:                  name,
         email:                 email,
         password:              "",
