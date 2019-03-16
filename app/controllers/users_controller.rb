@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "Welcome to the Sample app"
-      redirect_to @user
+      redirect_back_or @user
     else
       render "new"
     end
@@ -47,6 +47,7 @@ class UsersController < ApplicationController
 
   def logged_in_user
     unless logged_in?
+      store_location
       flash[:danger] = "Please Login"
       redirect_to login_url
     end
