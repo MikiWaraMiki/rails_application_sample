@@ -6,6 +6,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
   end
 
   test "unsuccessfull user update" do
+    log_in_as(@user)
     get edit_user_path(@user)
     assert_template "users/edit"
 
@@ -22,6 +23,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
   end
 
   test "succsessful user update" do
+    log_in_as(@user)
     get edit_user_path(@user)
     assert_template "users/edit"
     name  = "Update"
