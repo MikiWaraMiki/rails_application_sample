@@ -21,9 +21,11 @@ class UsersController < ApplicationController
   def destroy
     log_out
     redirect_to root_url
+  end
   #Private Method
   private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
+
 end
