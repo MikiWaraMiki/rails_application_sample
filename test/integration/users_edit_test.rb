@@ -54,7 +54,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
 
   test "should redirect update when logged in as wrong user" do
     log_in_as(@other_user)
-    get user_path(@user), params:{
+    patch user_path(@user), params:{
       user:{
         name: @user.name,
         email: @user.email
