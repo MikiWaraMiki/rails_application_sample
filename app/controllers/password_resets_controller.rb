@@ -2,7 +2,7 @@ class PasswordResetsController < ApplicationController
   def new
   end
 
-  def edit
+  def create
     @user = User.find_by(email:params[:password_rest][:email].downcase)
     if @user
       @user.create_reset_digest
