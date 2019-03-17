@@ -50,17 +50,19 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     }
     assert_select "div#error_explanation"
     #パスワードが空
-    patch password_reset_path(user.reset_token),params:{
+    patch password_reset_path(user.reset_token),
+    params:{
       email: user.email,
       user:{
-        password:"",
-        password_confirmation: "",
+        password: "fooba",
+        password_confirmation: "fooooooo"
       }
     }
     assert_select "div#error_explanation"
 
     #有効なパスワード
-    patch password_reset_path(user.reset_token),params:{
+    patch password_reset_path(user.reset_token),
+    params:{
       email: user.email,
       user:{
         password: "password",
