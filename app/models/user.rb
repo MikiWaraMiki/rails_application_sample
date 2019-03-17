@@ -36,6 +36,14 @@ class User < ApplicationRecord
         update_attribute(:remember_digest, nil)
     end
 
+    def acctivate
+        update_attribute(:activated, true)
+        update_attribute(:activated_at, Time.zone.now)
+    end
+
+    def send_email_activation
+        UserMailer.account_activation(self).deliver_now
+    end
     private
     def downcase_email
         email.downcase!
