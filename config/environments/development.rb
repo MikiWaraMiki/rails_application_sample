@@ -61,5 +61,5 @@ Rails.application.configure do
 
   # Mail Preview
   host = "localhost:3000"
-  config.action_mailer.defautl_url_options ={host:host, protocol:"http"}
+  config.action_mailer.default_url_options ={host:host, protocol:"http"}
 end
