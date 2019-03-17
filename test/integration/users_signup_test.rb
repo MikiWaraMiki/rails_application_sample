@@ -35,7 +35,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
       }
     end
     assert_equal 1, ActionMailer::Base.deliveries.size
-    user = assings(:user)
+    user = assigns(:user)
     assert_not user.acativated?
     #有効化されていないUserのログインを禁止している
     log_in_as(user)
