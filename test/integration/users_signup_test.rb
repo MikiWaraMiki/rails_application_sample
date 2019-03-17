@@ -41,13 +41,13 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     log_in_as(user)
     assert_not is_logged_in?
     #トークンが不正な場合
-    get edit_activation_path("Invalid token", email:user.email)
+    get edit_account_activation_path("Invalid token", email:user.email)
     assert_not is_logged_in?
     #トークンは正しいがアドレスが違う
-    get edit_activation_path(user.activation_token, email:"Wrong")
+    get edit_account_activation_path(user.activation_token, email:"Wrong")
     assert_not is_logged_in?
     #正しいトークンとアドレスが入力されたログイン可能
-    get edit_activation_path(user.activation_token, email:user.email)
+    get edit_account_activation_path(user.activation_token, email:user.email)
     assert user.reload.acativated?
     follow_redirect!
     assert_template 'users/show'
