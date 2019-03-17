@@ -62,13 +62,9 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
 
     #有効なパスワード
     patch password_reset_path(user.reset_token),
-    params:{
-      email: user.email,
-      user:{
-        password: "password",
-        password_confirmation: "password",
-      }
-    }
+    params: { email: user.email,
+      user: { password:              "foobaz",
+              password_confirmation: "foobaz" } }
     assert is_logged_in?
     assert_not flash.empty?
     assert_redirected_to user
