@@ -83,7 +83,7 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
       params:{
         email:@user.email,
         user:{
-          password:"password"
+          password:"password",
           password_confirmation:"password"
         }
       }
