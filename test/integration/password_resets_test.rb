@@ -10,14 +10,16 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     get new_password_reset_path
     assert_template 'password_resets/new'
     #メールアドレスが無効の時はメールが送信されない
-    post password_resets_path, params:{
+    post password_resets_path, 
+    params:{
       password_reset:{email:""}
     }
     assert_not flash.empty?
     assert_template "password_resets/new"
 
     #メールアドレスが有効の場合
-    post password_resets_path, params:{
+    post password_resets_path, 
+    params:{
       password_reset:{email:@user.email}
     }
     assert_not_equal @user.reset_digest, @user.reload.reset_digest
@@ -41,7 +43,8 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     assert_template "password_resets/edit"
     assert_select "input[name=email][type=hidden][value=?]", user.email
     #無効なパスワードとパスワード確認
-    patch password_reset_path(user.reset_token),params:{
+    patch password_reset_path(user.reset_token),
+    params:{
       email: user.email,
       user:{
         password: "fooba",
