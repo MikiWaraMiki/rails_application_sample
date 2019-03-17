@@ -20,8 +20,7 @@ class UserMailerTest < ActionMailer::TestCase
     assert_equal "Password reset", mail.subject
     assert_equal [user.email], mail.to
     assert_equal ["noreply@exsample.com"], mail.from
-    assert_match user.name, mail.body.encoded
-    assert_match user.activation_token,  mail.body.encoded
+    assert_match user.reset_token,  mail.body.encoded
     assert_mathc CGI.escape(user.email), mail.body.encoded
   end
 end
