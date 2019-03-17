@@ -54,8 +54,8 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     params:{
       email: user.email,
       user:{
-        password: "fooba",
-        password_confirmation: "fooooooo"
+        password: "",
+        password_confirmation: ""
       }
     }
     assert_select "div#error_explanation"
