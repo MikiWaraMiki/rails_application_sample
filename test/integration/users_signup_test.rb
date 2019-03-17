@@ -48,7 +48,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_not is_logged_in?
     #正しいトークンとアドレスが入力されたログイン可能
     get edit_account_activation_path(user.activation_token, email:user.email)
-    assert user.reload.acativated?
+    assert user.reload.activated?
     follow_redirect!
     assert_template 'users/show'
     assert flash[:success]
