@@ -14,4 +14,14 @@ class MicropostTest < ActiveSupport::TestCase
     @post.user_id = nil
     assert_not @post.valid?
   end
+
+  test "content should be inputed" do
+    @post.content = nil
+    assert_not @post.valid?
+  end
+
+  test "content should be at most 140 charcters" do
+    @post.content = "a" * 141
+    assert_not @post.valid?
+  end
 end
