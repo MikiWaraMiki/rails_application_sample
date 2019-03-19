@@ -28,4 +28,6 @@ class MicropostTest < ActiveSupport::TestCase
   test "orber should be most recent content" do
     assert microposts(:most_recent), Micropost.first
   end
+
+  
 end
