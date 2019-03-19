@@ -3,7 +3,7 @@ require 'test_helper'
 class MicropostTest < ActiveSupport::TestCase
   def setup
     @user = users(:michael)
-    @post = @user.microposts.create(content:"TEST CONETENT")
+    @post = @user.microposts.build(content:"TEST CONETENT")
   end
 
   test "should be valid" do
