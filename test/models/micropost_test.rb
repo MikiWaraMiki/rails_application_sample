@@ -24,4 +24,8 @@ class MicropostTest < ActiveSupport::TestCase
     @post.content = "a" * 141
     assert_not @post.valid?
   end
+
+  test "orber should be most recent content" do
+    assert microposts(:most_recent), Micropost.first
+  end
 end
