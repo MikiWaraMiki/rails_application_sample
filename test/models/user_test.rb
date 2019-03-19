@@ -69,7 +69,7 @@ class UserTest < ActiveSupport::TestCase
     @user.save
     @user.microposts.create!(content:"TEXT DESTROY")
     assert_difference "Micropost.count", -1 do
-      @user.destory
+      @user.destroy
     end
   end
 
