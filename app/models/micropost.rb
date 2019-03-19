@@ -2,6 +2,6 @@ class Micropost < ApplicationRecord
   belongs_to :user
   validates :user_id, presence:true
   validates :content, presence:true, length: {minimum:1, maximum:140}
-  defaul_scope -> {order(created_at: :desc)}
+  default_scope -> {order(created_at: :desc)}
 end
 
