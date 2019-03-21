@@ -62,7 +62,7 @@ gem "will_paginate", ">=3.1.6"
 # Crrier Wave and mini_magick
 gem 'carrierwave', ">=1.2.2"
 gem 'mini_magick', ">=4.7.0"
-gem 'fog', ">=1.4.2"
+#gem 'fog', ">=1.4.2"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
