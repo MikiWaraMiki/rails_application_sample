@@ -10,7 +10,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     get root_path
     assert_select 'div.pagination'
     #無効な送信
-    assert_difference "Micropost.count" do
+    assert_no_difference "Micropost.count" do
       post microposts_path, params:{micropost:{content:""}}
     end
 
