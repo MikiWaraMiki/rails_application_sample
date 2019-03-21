@@ -2,7 +2,7 @@
     <div id="error_explanation">
         <div class="alert alert-danger">
             <% #pluralize is helper. if first arg value is plural, translation automacaly%>
-            The form contains <%= pluralize(objcet.errors.count, "error") %>
+            The form contains <%= pluralize(object.errors.count, "error") %>
         </div>
         <ul>
             <% objcet.errors.full_messages.each do |msg| %>
