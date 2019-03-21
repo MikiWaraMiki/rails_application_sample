@@ -14,7 +14,7 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should redirect destory when user not logged in' do
     assert_no_difference 'Micropost.count' do
-      destory micropost_path(@micropost)
+      destroy micropost_path(@micropost)
     end
     assert_redirected_to login_url
   end
