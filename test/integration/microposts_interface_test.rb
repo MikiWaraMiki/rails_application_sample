@@ -19,7 +19,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_select 'div#error_explanation'
     #有効な送信
     content = "This is integration test post"
-    picture = fixture_file_upload("test/fixture/test.png", 'image/png')
+    picture = fixture_file_upload("test.png", 'image/png')
     assert_difference "Micropost.count", 1 do
       post microposts_path, params:{
           micropost:{content: content,
