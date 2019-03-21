@@ -39,6 +39,31 @@ gem 'dotenv-rails', require: 'dotenv/rails-now'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#Bootstrap and Jqury install
+source 'https://rubygems.org'
+gem "bootstrap-sass", ">= 3.4.1"
+gem "bootstrap-will_paginate", ">=1.0.0"
+#Bcrypt(Blofish Crypt). This installing purpose is login authentication
+gem "bcrypt", ">=3.1.12"
+
+# install Jquery
+gem "jquery-rails"
+gem "jquery-ui-rails"
+
+#Installing facker
+gem "faker", ">=1.7.3"
+
+#Paginate
+gem "will_paginate", ">=3.1.6"
+
+# Crrier Wave and mini_magick
+gem 'carrierwave', ">=1.2.2"
+gem 'mini_magick', ">=4.7.0"
+gem 'fog', ">=1.4.2"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -62,22 +87,5 @@ group :test do
   gem 'guard-minitest',           '2.4.4'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-#Bootstrap and Jqury install
-source 'https://rubygems.org'
-gem "bootstrap-sass", ">= 3.4.1"
-gem "bootstrap-will_paginate", ">=1.0.0"
-#Bcrypt(Blofish Crypt). This installing purpose is login authentication
-gem "bcrypt", ">=3.1.12"
 
-# install Jquery
-gem "jquery-rails"
-gem "jquery-ui-rails"
-
-#Installing facker
-gem "faker", ">=1.7.3"
-
-#Paginate
-gem "will_paginate", ">=3.1.6"
