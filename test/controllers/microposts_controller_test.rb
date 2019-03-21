@@ -2,7 +2,21 @@ require 'test_helper'
 
 class MicropostsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @micropost = microposts(:one)
+    @micropost = microposts(:orange)
+  end
+
+  test 'should redirect create when user not logged in' do
+    assert_no_difference 'Micropost.count' do
+      post micropost_path,params:{micropost:{content:"Login ipnum"}}
+    end
+    assert_redirected_to login_url
+  end
+
+  test 'should redirect destory when user not logged in' do
+    assert_no_difference 'Micropost.count' do
+      destory micropost_path(@micropost)
+    end
+    assert_redirected_to login_url
   end
 
   test "should get index" do
@@ -45,4 +59,6 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to microposts_url
   end
+
+
 end
