@@ -11,14 +11,14 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_select 'div.pagination'
     #無効な送信
     assert_difference "Micopost.count" do
-      post micropost_path, params:{micropost:{contents:""}}
+      post microposts_path, params:{micropost:{contents:""}}
     end
 
     assert_select 'div#error_explanation'
     #有効な送信
     content = "This is integration test post"
     assert_difference "Micropost.count", 1 do
-      post micropost_path, params:{micropost:{contents: content}}
+      post microposts_path, params:{micropost:{contents: content}}
     end
     assert_redirected_to root_url
     follow_redirect!
